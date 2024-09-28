@@ -9,5 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v4
+
       - name: hell world
-      - run: echo "test2"
+        run: echo "test2"
