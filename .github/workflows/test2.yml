@@ -1,0 +1,13 @@
+name: test2
+
+on:
+  workflow_dispatch:
+
+jobs:
+  setup:
+    name: test2
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: hell world
+      - run: echo "test2"
