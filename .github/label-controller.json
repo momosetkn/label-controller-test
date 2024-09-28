@@ -1,0 +1,10 @@
+[
+  {
+    "label": "test1",
+    "workflowId": "test1.yml"
+  },
+  {
+    "label": "test2",
+    "workflowId": "test2.yml"
+  }
+]
