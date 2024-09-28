@@ -1,10 +1,12 @@
 [
   {
     "label": "test1",
-    "workflowId": "test1.yml"
+    "ifAddWorkflowId": "test1.yml",
+    "ifRemoveWorkflowId": "rollback_test1.yml"
   },
   {
     "label": "test2",
-    "workflowId": "test2.yml"
+    "ifAddWorkflowId": "test2.yml",
+    "ifRemoveWorkflowId": "rollback_test2.yml"
   }
 ]
