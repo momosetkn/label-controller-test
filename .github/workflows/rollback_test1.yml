@@ -1,0 +1,15 @@
+name: rollback_test1
+
+on:
+  workflow_dispatch:
+
+jobs:
+  setup:
+    name: rollback_test1
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: hell world
+        run: echo "rollback_test1"
