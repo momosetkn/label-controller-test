@@ -26,8 +26,14 @@ jobs:
         if: steps.pull_request_number.outputs.pull_request_number != ''
         run: |
           echo "notEmpty"
+          exit 0
 
       - name: step2
         if: steps.pull_request_number.outputs.pull_request_number == ''
         run: |
           echo "empty"
+
+
+      - name: step3
+        run: |
+          echo "last"
