@@ -19,6 +19,8 @@ jobs:
         run: |
           PR_NUMBER=$(gh pr list --head ${{ github.ref_name }} --json number --jq '.[0].number')
           echo "pull_request_number=$PR_NUMBER" >> $GITHUB_OUTPUT
+        env:
+          GH_TOKEN: ${{ github.token }}
 
       - name: step1
         if: steps.pull_request_number.outputs.pull_request_number != ''
