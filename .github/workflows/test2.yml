@@ -13,3 +13,19 @@ jobs:
 
       - name: hell world
         run: echo "test2"
+
+      - name: Get associated PR
+        id: pull_request_number
+        run: |
+          PR_NUMBER=$(gh pr list --head ${{ github.ref_name }} --json number --jq '.[0].number')
+          echo "pull_request_number=$PR_NUMBER" >> $GITHUB_OUTPUT
+
+      - name: step1
+        if: steps.pull_request_number.outputs.pull_request_number != ''
+        run: |
+          echo "notEmpty"
+
+      - name: step2
+        if: steps.pull_request_number.outputs.pull_request_number == ''
+        run: |
+          echo "empty"
