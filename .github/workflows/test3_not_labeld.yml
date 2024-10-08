@@ -16,7 +16,10 @@ jobs:
       - name: Run tests
         run: echo "aaa" > aaa.txt
 
-      - name: Check for git diff
+      - name: Check for any git status changes
         run: |
-          git status
-          git diff --exit-code
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "Error: There are uncommitted changes after tests run!"
+            git status
+            exit 1
+          fi
