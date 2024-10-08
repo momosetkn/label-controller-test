@@ -16,6 +16,9 @@ jobs:
       - name: Run tests
         run: echo "aaa" > aaa.txt
 
+      - name: Run tests2
+        run: rm aaa.txt
+
       - name: Check for any git status changes
         run: |
           if [ -n "$(git status --porcelain)" ]; then
