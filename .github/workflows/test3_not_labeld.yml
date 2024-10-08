@@ -1,0 +1,21 @@
+name: test3
+
+on:
+  workflow_dispatch:
+
+jobs:
+  setup:
+    name: test2
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run tests
+        run: echo "aaa" > aaa.txt
+
+      - name: Check for git diff
+        run: |
+          git status
+          git diff --exit-code
