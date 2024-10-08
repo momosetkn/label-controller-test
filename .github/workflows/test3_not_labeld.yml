@@ -1,0 +1,28 @@
+name: test3
+
+on:
+  workflow_dispatch:
+  pull_request:
+
+jobs:
+  setup:
+    name: test2
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run tests
+        run: echo "aaa" > aaa.txt
+
+      - name: Run tests2
+        run: rm aaa.txt
+
+      - name: Check for any git status changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "Error: There are uncommitted changes after tests run!"
+            git status
+            exit 1
+          fi
